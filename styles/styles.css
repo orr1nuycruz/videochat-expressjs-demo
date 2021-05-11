@@ -10,6 +10,20 @@ body{
   text-align: center;
 }
 
+.centerText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  margin: -25px 0 0 -25px; 
+}
+
+.centerJoinRoomDialog{
+  position: relative;
+  width: 1366px;
+  height: 768px;
+}
+
 #gridview-video{
   margin-top:90px;
   margin-bottom:90px;

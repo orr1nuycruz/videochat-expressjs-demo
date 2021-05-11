@@ -2,39 +2,84 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script>
-        const ROOM_ID = "<% roomId %>"
-    </script>
-    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/scripts.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<% roomId %>"
+  </script>
+  <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/scripts.js" defer></script>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 
-    <!-- <style>
-        #gridview-video{
-          display: grid;
-          grid-template-columns: repeat(auto-fill, 500px);
-          grid-auto-rows: 500px;
-        }
-        
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-    </style> -->
+  <style>
+    body {
+      font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+
+    #allpage {
+      width: 1080px;
+      margin: auto;
+    }
+
+    #videoTitle {
+      text-align: center;
+    }
+
+    .centerText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      margin: -25px 0 0 -25px;
+    }
+
+    .centerJoinRoomDialog {
+      position: relative;
+      width: 1366px;
+      height: 768px;
+    }
+
+    #gridview-video {
+      margin-top: 90px;
+      margin-bottom: 90px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 200px);
+      grid-auto-rows: 200px;
+    }
+
+    #gridview-video video {
+      padding: 20px;
+    }
+
+    #main-video {
+      margin-top: 90px;
+      margin-bottom: 90px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 1000px);
+      grid-auto-rows: 500px;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .outer-video {
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
   <div id="allpage">
     <h1 id="videoTitle">Hello friend</h1>
     <div id="main-video"></div>
-    <div id="gridview-video"></div>   
+    <div id="gridview-video"></div>
   </div>
-   
+
 </body>
 
 </html>

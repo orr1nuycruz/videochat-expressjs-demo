@@ -9,17 +9,22 @@ const {v4 : uuidv4} = require("uuid");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(express.static('styles'));
+app.use(express.static("node_modules"));
+app.use(express.static("styles"));
 
 app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) =>{
-    res.redirect(`/${uuidv4()}`)
+    res.render("intro", {title: "Group Chat"});
 })
 
-app.get("/:room", (req, res) => {
+app.get("/room", (req, res) =>{
+    res.redirect(`/room/${uuidv4()}`)
+})
+
+app.get("/room/:room", (req, res) => {
     res.render("room", {roomId: req.params.room});
 });
 
