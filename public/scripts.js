@@ -56,8 +56,6 @@ socket.on("user-disconnected", (userId) => {
         peers[userId].closer();
 })
 
-
-
 function connectToNewUser(userId, stream) {
     const call = myPeer.call(userId, stream);
     const video = document.createElement("video")
@@ -82,14 +80,4 @@ function addVideoStream(video, stream) {
     videoGrid.append(video)
 }
 
-function addExtraVideoStream(video, stream) {
-    const divVideo = document.createElement("div")
-    divVideo.className = "outer-video"
-    video.srcObject = stream;
-    video.addEventListener("loadedmetadata", () => {
-        video.play()
-    })
-    // videoGrid.append(divVideo)
-    // divVideo.append(video)
-    videoGrid.append(video)
-}
+

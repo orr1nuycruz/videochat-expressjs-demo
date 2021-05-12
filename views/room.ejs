@@ -11,16 +11,20 @@
   <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/scripts.js" defer></script>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" href="styles.css"> -->
 
   <style>
     body {
       font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      background-color: black;
+    }
+    #videoTitle {
+      color:blanchedalmond;
     }
 
     #allpage {
-      width: 1080px;
-      margin: auto;
+      width: 100%;
     }
 
     #videoTitle {
@@ -41,9 +45,16 @@
       height: 768px;
     }
 
+    .button {
+      position: fixed;
+      bottom: 0px;
+      right: 5%;
+    }
+
     #gridview-video {
-      margin-top: 90px;
-      margin-bottom: 90px;
+      position: fixed;
+      bottom: 0;
+      width: 50%;
       display: grid;
       grid-template-columns: repeat(auto-fill, 200px);
       grid-auto-rows: 200px;
@@ -59,6 +70,14 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, 1000px);
       grid-auto-rows: 500px;
+    }
+
+    #main-video video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 90%;
+      min-height: 90%;
     }
 
     video {
@@ -77,7 +96,12 @@
   <div id="allpage">
     <h1 id="videoTitle">Hello friend</h1>
     <div id="main-video"></div>
-    <div id="gridview-video"></div>
+
+    <div id="gridview-video">
+    </div>
+    <p class="lead button">
+      <a class="btn btn-primary btn-lg" href="/" role="button">Leave Room</a>
+    </p>
   </div>
 
 </body>
